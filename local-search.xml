@@ -4,13 +4,82 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2020/09/28/hello-world/"/>
-    <url>/2020/09/28/hello-world/</url>
+    <title>Rsa秘钥生成</title>
+    <link href="/2020/09/28/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90/"/>
+    <url>/2020/09/28/RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-生成rsa私钥，文本存储格式，长度2048"><a href="#1-生成rsa私钥，文本存储格式，长度2048" class="headerlink" title="1.生成rsa私钥，文本存储格式，长度2048"></a>1.生成rsa私钥，文本存储格式，长度2048</h3><pre><code class="hljs shell">openssl genrsa -out rsa_private_key.pem 2048</code></pre><h3 id="2-根据私钥生成对应的公钥"><a href="#2-根据私钥生成对应的公钥" class="headerlink" title="2.根据私钥生成对应的公钥"></a>2.根据私钥生成对应的公钥</h3><pre><code class="hljs shell">openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key_2048.pub</code></pre><h3 id="3-私钥转化成pkcs8格式"><a href="#3-私钥转化成pkcs8格式" class="headerlink" title="3.私钥转化成pkcs8格式"></a>3.私钥转化成pkcs8格式</h3><pre><code class="hljs shell">openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt &gt; rsa_private_key_pkcs8.pem</code></pre>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Rsa</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring Cache</title>
+    <link href="/2020/09/28/Spring%20Cache/"/>
+    <url>/2020/09/28/Spring%20Cache/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Spring-Cache"><a href="#Spring-Cache" class="headerlink" title="Spring Cache"></a>Spring Cache</h2><h5 id="1-Caching"><a href="#1-Caching" class="headerlink" title="1.@Caching"></a>1.@Caching</h5><p>组合多种缓存操作</p><h5 id="2-CacheEvict"><a href="#2-CacheEvict" class="headerlink" title="2.@CacheEvict"></a>2.@CacheEvict</h5><p>刪除缓存</p><h5 id="3-Cacheable"><a href="#3-Cacheable" class="headerlink" title="3.@Cacheable"></a>3.@Cacheable</h5><p>有则取缓存,无则运行业务逻辑,将最终结果存到缓存中</p><h5 id="4-CachePut"><a href="#4-CachePut" class="headerlink" title="4.@CachePut"></a>4.@CachePut</h5><p>将返回值重新设置到缓存中,双写模式</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+      <tag>Cache</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>docker下载</title>
+    <link href="/2020/09/28/docker%E4%B8%8B%E8%BD%BD/"/>
+    <url>/2020/09/28/docker%E4%B8%8B%E8%BD%BD/</url>
+    
+    <content type="html"><![CDATA[<h1 id="docker下载"><a href="#docker下载" class="headerlink" title="docker下载"></a>docker下载</h1><p>yum 包更新到最新</p><pre><code class="hljs shell">sudo yum update</code></pre><p>安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</p><pre><code class="hljs shell">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</code></pre><p>设置yum源为阿里云</p><pre><code class="hljs shell">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></pre><p>安装docker</p><pre><code class="hljs shell">sudo yum install docker-ce</code></pre><p>安装后查看docker版本</p><pre><code class="hljs shell">docker -v</code></pre><pre><code class="hljs shell">mkdir /etc/dockervi /etc/docker/daemon.json</code></pre><p>在该文件中输入如下内容：</p><pre><code class="hljs shell">&#123;  &quot;registry-mirrors&quot;: [&quot;https://9cpn8tt6.mirror.aliyuncs.com&quot;]&#125;</code></pre><p>启动docker：</p><pre><code class="hljs shell">systemctl start docker</code></pre><p>停止docker：</p><pre><code class="hljs shell">systemctl stop docker</code></pre><p>重启docker：</p><pre><code class="hljs shell">systemctl restart docker</code></pre><p>查看docker状态：</p><pre><code class="hljs shell">systemctl status docker</code></pre><p>开机启动：</p><pre><code class="hljs shell">systemctl enable docker</code></pre><p>查看docker概要信息</p><pre><code class="hljs shell">docker info</code></pre><p>查看docker帮助文档</p><pre><code class="hljs shell">docker --help</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>Ops</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>docker部署服务的环境变量</title>
+    <link href="/2020/09/28/docker%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <url>/2020/09/28/docker%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="docker部署服务的环境变量"><a href="#docker部署服务的环境变量" class="headerlink" title="docker部署服务的环境变量"></a>docker部署服务的环境变量</h1><h2 id="一-MySQL"><a href="#一-MySQL" class="headerlink" title="一.MySQL"></a>一.MySQL</h2><pre><code class="hljs shell">MYSQL_ROOT_PASSWORD=root  root用户密码</code></pre><h2 id="二-MongoDB"><a href="#二-MongoDB" class="headerlink" title="二.MongoDB"></a>二.MongoDB</h2><pre><code class="hljs shell">MONGO_INITDB_ROOT_USERNAME=root管理员账号MONGO_INITDB_ROOT_PASSWORD=root 管理员密码db.createUser(&#123;user:&quot;root&quot;,pwd:&quot;root&quot;,roles:[&#123;role:&quot;root&quot;,db:&quot;admin&quot;&#125;]&#125;)</code></pre><h2 id="三-Elasticsearch"><a href="#三-Elasticsearch" class="headerlink" title="三.Elasticsearch"></a>三.Elasticsearch</h2><pre><code class="hljs shell">ES_JAVA_OPTS=-Xms512m -Xmx512m 设置JVM内存discovery.type=single-node单节点设置</code></pre><h2 id="四-Kibana"><a href="#四-Kibana" class="headerlink" title="四.Kibana"></a>四.Kibana</h2><pre><code class="hljs shell">ELASTICSEARCH_URL=http://localhost:9200 设置Elasticsearch的URLELASTICSEARCH_HOSTS=http://localhost:9200I18N_LOCALE=zh-CN设置中文</code></pre><h2 id="五-Redis"><a href="#五-Redis" class="headerlink" title="五.Redis"></a>五.Redis</h2><ul><li>这是命令,不是环境变量</li></ul><pre><code class="hljs shell">--requirepass root设置密码--appendonly yes数据持久化</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>Ops</tag>
+      
+    </tags>
     
   </entry>
   
