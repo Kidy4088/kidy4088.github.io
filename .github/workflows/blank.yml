@@ -35,5 +35,5 @@ jobs:
         with:
           gitee-username: Kidy4088
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
-          gitee-repo: Kidy4088/kchat-note
+          gitee-repo: Kidy4088/Kidy4088
           branch: gh-pages
