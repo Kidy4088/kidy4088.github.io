@@ -1,0 +1,25 @@
+{
+  "name": "kidy4088-blog",
+  "version": "1.0.0",
+  "description": "Kidy4088的博客",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "vuepress": "1.7.1",
+    "vuepress-theme-reco": "^1.6.5"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kidy4088/Kidy4088.github.io.git"
+  },
+  "author": "Kidy4088",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kidy4088/Kidy4088.github.io/issues"
+  },
+  "homepage": "https://github.com/Kidy4088/Kidy4088.github.io#readme"
+}
