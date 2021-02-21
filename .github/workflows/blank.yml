@@ -24,7 +24,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
-          source-repo: 'git@github.com:Kidy4088/Kidy4088.git'
+          source-repo: 'git@github.com:Kidy4088/Kidy4088.github.io.git'
           destination-repo: 'git@gitee.com:Kidy4088/Kidy4088.git'
   reload-pages:
     needs: sync
