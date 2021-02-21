@@ -1,7 +1,7 @@
 {
   "name": "kidy4088-blog",
   "version": "1.0.0",
-  "description": "Kidy的博客",
+  "description": "Kidy4088的博客",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
@@ -19,6 +19,12 @@
   "homepage": "https://github.com/Kidy4088/Kidy4088.github.io#readme",
   "devDependencies": {
     "vuepress": "1.7.1",
+    "vuepress-plugin-cursor-effects": "^1.0.2",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-go-top": "^1.0.4",
+    "vuepress-plugin-helper-live2d": "^1.0.2",
+    "vuepress-plugin-meting": "^0.2.1",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
     "vuepress-theme-reco": "1.6.1"
   }
 }
