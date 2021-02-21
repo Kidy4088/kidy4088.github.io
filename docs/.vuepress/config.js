@@ -1,6 +1,6 @@
 module.exports = {
-  title: '',
-  description: '',
+  title: 'K/X',
+  description: 'Kidy4088的博客',
   dest: 'public',
   head: [
     [
@@ -85,7 +85,7 @@ module.exports = {
     search: true,
     searchMaxSuggestions: 10,
     lastUpdated: 'Last Updated',
-    author: '',
+    author: 'Kidy4088',
     authorAvatar: '/avatar.png',
     record: 'xxxx',
     startYear: '2017'

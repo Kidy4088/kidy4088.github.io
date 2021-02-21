@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: npm install && npm build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+  sync:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:Kidy4088/Kidy4088.git'
+          destination-repo: 'git@gitee.com:Kidy4088/Kidy4088.git'
+  reload-pages:
+    needs: sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Gitee Pages
+        uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: Kidy4088
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: Kidy4088/kchat-note
+          branch: gh-pages
