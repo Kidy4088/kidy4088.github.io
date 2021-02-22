@@ -43,7 +43,7 @@ module.exports = {
         items: [
           {
             text: 'KChat项目文档',
-            link: 'https://kidy4088.gitee.io/kchat-note'
+            link: '/docs/KChat/'
           }
         ]
       },
