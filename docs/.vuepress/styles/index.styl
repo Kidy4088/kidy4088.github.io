@@ -1,0 +1,49 @@
+.hero
+    color: #fff
+
+.timeline-content
+    width: calc(100% - 20px)
+    left: 20px
+    max-width: 600px
+    margin: 30px auto 0 auto
+    padding-bottom: 50px
+
+    .year-wrapper
+        li
+            margin-top: 10px
+            border: 0 !important
+            padding: 2.5px !important
+
+            .title
+                color: #fff !important
+                padding: 10px 20px 10px 20px !important
+                // background-image linear-gradient(to right, #FEB692, #EA5455)
+                background-image: linear-gradient(to right, $accentColor + 50, $accentColor - 50)
+                border-radius: 50px
+                white-space: nowrap
+                overflow: hidden
+                display: block
+                width: 100%
+                transition: all 1s
+                text-overflow: ellipsis
+
+            .date
+                position: absolute
+                left: -60px
+                top: 10px
+
+                &:before
+                    left: 42px !important
+                    top: 12px !important
+                    transition: all 1s
+
+            &:hover
+                .title
+                    transform: translateX(20px)
+
+                .date
+                    color: $accentColor !important
+
+                    &:before
+                        transform: scale(2)
+                        background: $accentColor !important
