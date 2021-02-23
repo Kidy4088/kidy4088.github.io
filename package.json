@@ -21,6 +21,7 @@
     "vuepress": "1.7.1",
     "vuepress-plugin-cursor-effects": "^1.0.2",
     "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-flowchart": "^1.4.3",
     "vuepress-plugin-go-top": "^1.0.4",
     "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-meting": "^0.2.1",

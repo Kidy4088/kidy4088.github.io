@@ -18,7 +18,12 @@ module.exports = {
       }
     ]
   ],
-  theme: 'reco',
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    }
+  },
+  // theme: 'reco',
   themeConfig: {
     valineConfig: {
       appId: 'QHPFBRcheCkguC0kOvFVHQoA-gzGzoHsz',
@@ -78,32 +83,27 @@ module.exports = {
         link: 'https://kidy4088.gitee.io/kchat-note'
       }
     ],
-    locales: {
-      '/': {
-        lang: 'zh-CN'
-      }
-    },
-    locales: {
-      '/': {
-        recoLocales: {
-          homeBlog: {
-            article: '文章',
-            tag: '标签',
-            category: '分类',
-            friendLink: '友链'
-          },
-          pagation: {
-            prev: '上一页',
-            next: '下一页',
-            go: '前往',
-            jump: '跳转至'
-          },
-          tag: {
-            all: '全部'
-          }
-        }
-      }
-    },
+    // locales: {
+    //   '/': {
+    //     recoLocales: {
+    //       homeBlog: {
+    //         article: '文章',
+    //         tag: '标签',
+    //         category: '分类',
+    //         friendLink: '友链'
+    //       },
+    //       pagation: {
+    //         prev: '上一页',
+    //         next: '下一页',
+    //         go: '前往',
+    //         jump: '跳转至'
+    //       },
+    //       tag: {
+    //         all: '全部'
+    //       }
+    //     }
+    //   }
+    // },
     logo: '/logo.png',
     search: true,
     searchMaxSuggestions: 10,
@@ -117,6 +117,7 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
+    ['flowchart'],
     [
       'cursor-effects',
       {
