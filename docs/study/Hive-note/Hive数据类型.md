@@ -5,6 +5,7 @@ tags:
   - Hive
 categories:
   - 大数据
+img: https://cdn.jsdelivr.net/gh/Kidy4088/Pic/2.png
 ---
 
 ##  1. 基本数据类型

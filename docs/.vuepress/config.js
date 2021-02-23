@@ -30,7 +30,6 @@ module.exports = {
       appKey: '7aAUdFwSHStwRWVAX9gAck1P'
     },
     subSidebar: 'auto',
-    sidebar: 'auto',
     nav: [
       {
         text: '主页',
@@ -154,7 +153,7 @@ module.exports = {
           fixed: true,
           mini: true,
           // 自动播放
-          autoplay: true,
+          autoplay: false,
           // 歌曲栏折叠
           listFolded: true,
           // 颜色
@@ -244,6 +243,12 @@ module.exports = {
         },
         ribbonShow: false, //  点击彩带  true显示  false为不显示
         ribbonAnimationShow: true // 滑动彩带
+      }
+    ],
+    [
+      'copyright',
+      {
+        authorName: 'Kidy4088'
       }
     ],
     ['@vuepress-reco/back-to-top', false]

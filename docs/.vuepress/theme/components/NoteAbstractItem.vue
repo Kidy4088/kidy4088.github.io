@@ -3,15 +3,20 @@
     class="abstract-item"
     @click="$router.push(item.path)">
     <reco-icon v-if="item.frontmatter.sticky" icon="reco-sticky" />
-    <div class="title">
-      <reco-icon v-if="item.frontmatter.keys" icon="reco-lock" />
-      <router-link :to="item.path">{{item.title}}</router-link>
+    <div class="img-wrapper" v-if="item.frontmatter.img && !item.excerpt">
+      <div class="img" :style="getImgUrl(item)"></div>
     </div>
-    <div class="abstract" v-html="item.excerpt"></div>
-    <PageInfo
-      :pageInfo="item"
-      :currentTag="currentTag">
-    </PageInfo>
+    <div class="abstract-content-wrap">
+      <div class="title">
+        <reco-icon v-if="item.frontmatter.keys" icon="reco-lock" />
+        <router-link :to="item.path">{{item.title}}</router-link>
+      </div>
+      <div class="abstract" v-html="item.excerpt"></div>
+      <PageInfo
+        :pageInfo="item"
+        :currentTag="currentTag">
+      </PageInfo>
+    </div>
   </div>
 </template>
 
@@ -20,11 +25,38 @@ import { RecoIcon } from '@vuepress-reco/core/lib/components'
 import PageInfo from './PageInfo'
 export default {
   components: { PageInfo, RecoIcon },
-  props: ['item', 'currentPage', 'currentTag']
+  props: ['item', 'currentPage', 'currentTag'],
+  methods: {
+    getImgUrl(item){
+      return {background: 'url('+item.frontmatter.img+') center center / cover no-repeat'}
+    }
+  },
 }
 </script>
 
 <style lang="stylus" scoped>
+.img-wrapper
+  width: 100%;
+  flex: 1;
+  transition: 1s ease-out;
+  border-radius: .5rem;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+  .img
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    transform: scale(1.1);
+
+.abstract-content-wrap
+  margin: 0 1rem;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  transition: all .3s;
+  
 .abstract-item
   position relative
   margin: 0 auto 20px;
@@ -37,9 +69,10 @@ export default {
   transition all .3s
   background-color var(--background-color)
   cursor: pointer;
+  display: flex;
   > * {
     pointer-events: auto;
-  }
+  }  
   .reco-sticky
     position absolute
     top 0
@@ -71,6 +104,8 @@ export default {
       transform: scaleX(1)
     &::after
       transform: scaleY(1) 
+    .img-wrapper .img
+      transform scale(1)
   .title
     position: relative;
     font-size: 1.28rem;
@@ -105,9 +140,18 @@ export default {
         color $accentColor
       // &:hover
       //   color $accentColor
+@media (max-width: $MQWide)
+  .abstract-item 
+    .abstract-content-wrap
+      margin 0
+    display: block
+  .img-wrapper
+    height: 0;
 @media (max-width: $MQMobile)
   .tags
     display block
     margin-top 1rem;
     margin-left: 0!important;
+  .img-wrapper
+    height: 180px;
 </style>

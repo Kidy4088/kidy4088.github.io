@@ -1,0 +1,53 @@
+.hero {
+  color: #fff;
+}
+.timeline-content {
+  width: calc(100% - 20px);
+  left: 20px;
+  max-width: 600px;
+  margin: 30px auto 0 auto;
+  padding-bottom: 50px;
+}
+.timeline-content .year-wrapper li {
+  margin-top: 10px;
+  border: 0 !important;
+  padding: 2.5px !important;
+}
+.timeline-content .year-wrapper li .title {
+  color: #fff !important;
+  padding: 10px 20px 10px 20px !important;
+  background-image: linear-gradient(to right, $accentColor50, $accentColor -50);
+  border-radius: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  transition: all 1s;
+  text-overflow: ellipsis;
+}
+.timeline-content .year-wrapper li .date {
+  position: absolute;
+  left: -60px;
+  top: 10px;
+}
+.timeline-content .year-wrapper li .date:before {
+  left: 42px !important;
+  top: 12px !important;
+  transition: all 1s;
+}
+.timeline-content .year-wrapper li:hover .title {
+  transform: translateX(20px);
+}
+.timeline-content .year-wrapper li:hover .date {
+  color: $accentColor !important;
+}
+.timeline-content .year-wrapper li:hover .date:before {
+  transform: scale(2);
+  background: $accentColor !important;
+}
+.custom-block p {
+  margin: 10px 0;
+}
+.custom-block .title {
+  margin: 0;
+}

@@ -59,6 +59,7 @@ export default defineComponent({
     a
       padding 0.35rem 1rem 0.35rem 0rem
       color var(--text-color)
+      background transparent !important;
     &:hover
       a
        color $accentColor
