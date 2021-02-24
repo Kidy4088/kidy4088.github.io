@@ -38,7 +38,7 @@ export default {
 .img-wrapper
   width: 100%;
   flex: 1;
-  transition: 1s ease-out;
+  transition: all .5s ease-out;
   border-radius: .5rem;
   overflow: hidden;
   height: 200px;

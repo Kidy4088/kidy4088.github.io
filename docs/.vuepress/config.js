@@ -82,27 +82,6 @@ module.exports = {
         link: 'https://kidy4088.gitee.io/kchat-note'
       }
     ],
-    // locales: {
-    //   '/': {
-    //     recoLocales: {
-    //       homeBlog: {
-    //         article: '文章',
-    //         tag: '标签',
-    //         category: '分类',
-    //         friendLink: '友链'
-    //       },
-    //       pagation: {
-    //         prev: '上一页',
-    //         next: '下一页',
-    //         go: '前往',
-    //         jump: '跳转至'
-    //       },
-    //       tag: {
-    //         all: '全部'
-    //       }
-    //     }
-    //   }
-    // },
     logo: '/logo.png',
     search: true,
     searchMaxSuggestions: 10,
@@ -202,7 +181,7 @@ module.exports = {
           model: 'koharu',
           display: {
             vOffset: -35, //  垂直偏移
-            hOffset: 165 //  水平偏移
+            hOffset: 145 //  水平偏移
           },
           mobile: {
             show: false // 是否在移动设备上显示(default: false)
@@ -245,12 +224,12 @@ module.exports = {
         ribbonAnimationShow: true // 滑动彩带
       }
     ],
-    [
-      'copyright',
-      {
-        authorName: 'Kidy4088'
-      }
-    ],
+    // [
+    //   'copyright',
+    //   {
+    //     authorName: 'Kidy4088'
+    //   }
+    // ],
     ['@vuepress-reco/back-to-top', false]
   ]
 }
