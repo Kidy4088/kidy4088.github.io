@@ -181,7 +181,7 @@ module.exports = {
           model: 'koharu',
           display: {
             vOffset: -35, //  垂直偏移
-            hOffset: 145 //  水平偏移
+            hOffset: 140 //  水平偏移
           },
           mobile: {
             show: false // 是否在移动设备上显示(default: false)
