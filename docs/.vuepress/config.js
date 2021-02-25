@@ -114,7 +114,7 @@ module.exports = {
         recoverTime: 1000
       }
     ],
-    ['go-top'],
+    // ['go-top'],
     [
       'meting',
       {
@@ -223,13 +223,13 @@ module.exports = {
         ribbonShow: false, //  点击彩带  true显示  false为不显示
         ribbonAnimationShow: true // 滑动彩带
       }
-    ],
+    ]
     // [
     //   'copyright',
     //   {
     //     authorName: 'Kidy4088'
     //   }
     // ],
-    ['@vuepress-reco/back-to-top', false]
+    // ['@vuepress-reco/back-to-top', false]
   ]
 }
