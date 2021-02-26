@@ -9,7 +9,6 @@ export default defineComponent({
     const headers = computed(() => {
       return root.$showSubSideBar ? root.$page.headers : []
     })
-
     const isLinkActive = (header) => {
       const active = isActive(root.$route, root.$page.path + '#' + header.slug)
       if (active) {

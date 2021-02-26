@@ -281,20 +281,20 @@ function flatten (items, res) {
         left 0
         top 3.6rem
         display block
-        height 1.6rem
+        height 1.5rem
         content ''
         border-left 5px solid #3eaf7c
-    // h4
-    //   position relative
-    //   padding-left 0.8rem
-    //   &::before
-    //     position absolute
-    //     left 0
-    //     top 3.6rem
-    //     display block
-    //     height 1.4rem
-    //     content ''
-    //     border-left 5px solid $accentColor - 100
+    h4
+      position relative
+      padding-left 0.8rem
+      &::before
+        position absolute
+        left 0
+        top 3.6rem
+        display block
+        height 1.2rem
+        content ''
+        border-left 5px solid #f39c12
   .page-edit
     @extend $wrapper
     padding-top 1rem

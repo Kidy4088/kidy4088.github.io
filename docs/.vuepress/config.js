@@ -180,8 +180,8 @@ module.exports = {
           // 模型名称(default: hibiki)
           model: 'koharu',
           display: {
-            vOffset: -35, //  垂直偏移
-            hOffset: 140 //  水平偏移
+            vOffset: -70, //  垂直偏移
+            hOffset: 135 //  水平偏移
           },
           mobile: {
             show: false // 是否在移动设备上显示(default: false)
