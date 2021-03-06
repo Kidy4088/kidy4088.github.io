@@ -5,5 +5,5 @@ module.exports = {
   '/study/SpringBoot2': [
     getDocPath('SpringBoot2 学习笔记', false, '/study/SpringBoot2-note/')
   ],
-  '/study/Vertx': [getDocPath('Vert.x 学习笔记', false, '/study/Vertx-note/')]
+  '/study/Vert.x': [getDocPath('Vert.x 学习笔记', false, '/study/Vert.x-note/')]
 }
